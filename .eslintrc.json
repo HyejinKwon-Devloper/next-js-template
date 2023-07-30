@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["prettier"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/extensions": [".ts", ".tsx"]
+  },
+  "ignorePatterns": ["node_modules/"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }]
+  }
 }
