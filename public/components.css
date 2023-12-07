@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .content-area {
+    @apply flex min-h-screen my-16 bg-white items-center justify-between;
+    /* min-h-screen flex-col  m-24 bg-white; */
+    /*  */
+  }
+  .appbar {
+    @apply flex bg-gray-dark text-white border-b-white border-b h-14 py-1;
+  }
+
+  .appbar-profile {
+    @apply flex-none px-1 m-auto;
+  }
+
+  .appbar-title {
+    @apply flex-auto px-1 m-auto;
+  }
+
+  .appbar-ico {
+    @apply flex-none px-1 m-auto;
+  }
+}

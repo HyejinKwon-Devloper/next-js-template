@@ -1,7 +1,10 @@
+import AppBar from '@/components/AppBar';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>HOME</h1>
+    <main>
+      <AppBar />
+      <div className="content-area"></div>
     </main>
   );
 }
