@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <AppBar />
-      <div className="content-area"></div>
+      <div className="content-area" />
     </main>
   );
 }

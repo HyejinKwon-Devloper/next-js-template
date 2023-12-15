@@ -5,7 +5,7 @@ module.exports = {
     './components/**/*.{ts,tsx,mdx}',
     './app/**/*.{ts,tsx,mdx}',
   ],
-  darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: ['class'],
   theme: {
     extend: {
       backgroundImage: {
@@ -20,8 +20,8 @@ module.exports = {
       gray: '#595959',
       'gray-dark': '#262626',
       'gray-light': '#A6A6A6',
-      primary: 'rgb(var(--color-primary) / <alpha-value>)',
-      secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+      primary: 'var(--color-primary)',
+      secondary: 'var(--color-secondary)',
     },
   },
 
