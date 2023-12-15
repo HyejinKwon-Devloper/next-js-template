@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --foreground-rgb: 13, 13, 13;
-    --background-start-rgb: 38, 38, 38;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 13, 13, 13;
     --color-primary: rgb(38 38 38);
     --color-secondary: rgb(166 166 166);
     padding: 24px;
@@ -17,10 +17,4 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
