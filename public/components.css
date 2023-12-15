@@ -10,11 +10,14 @@
       var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 
+  /* 컨텐츠 영역 */
   .content-area {
     @apply flex min-h-screen my-16 bg-white items-center justify-between rounded-md;
   }
+
+  /* appbar 영역 */
   .appbar {
-    @apply flex dark:bg-gray-dark dark:text-white text-black border-b-white border-b h-14 py-1;
+    @apply flex dark:bg-gray-dark dark:text-white text-black border-b-white border-b h-14 py-1 shadow-md;
   }
 
   .appbar-profile {
@@ -26,7 +29,7 @@
   }
 
   .appbar-title h1 {
-    @apply text-black dark:text-white;
+    @apply text-black dark:text-white text-center;
   }
 
   .appbar-ico {
@@ -37,16 +40,11 @@
     @apply mx-2;
   }
 
-  .imgDark {
-    display: none;
+  .appbar-ico .imgDark {
+    @apply hidden dark:inline;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .imgLight {
-      display: none;
-    }
-    .imgDark {
-      display: unset;
-    }
+  .appbar-ico .imgLight {
+    @apply inline dark:hidden;
   }
 }
