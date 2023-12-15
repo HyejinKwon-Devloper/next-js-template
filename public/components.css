@@ -33,6 +33,10 @@
     @apply flex-none px-2 m-auto;
   }
 
+  .appbar-ico img {
+    @apply mx-2;
+  }
+
   .imgDark {
     display: none;
   }
