@@ -1,9 +1,15 @@
 'use client';
+import { useMobileMenuStatus } from '@/hook/useMenuHook';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
-export default function AppBar() {
+type AppBarProps = {
+  children?: React.ReactNode;
+};
+export default function AppBar(props: AppBarProps) {
+  const { children } = props;
   const { theme, setTheme } = useTheme();
+  const { isActiveMenu, toggleOpenStatus } = useMobileMenuStatus();
 
   function handleDarkMode() {
     return setTheme(theme === 'light' ? 'dark' : 'light');
@@ -32,6 +38,7 @@ export default function AppBar() {
       <div className="appbar-title">
         <h1>Hello Jin's World ❤</h1>
       </div>
+      {children && children}
       <div className="appbar-ico">
         <button onClick={handleDarkMode}>
           <Image
@@ -52,23 +59,46 @@ export default function AppBar() {
           />
         </button>
       </div>
-      <div className="appbar-ico">
-        <Image
-          src="/ico/menu_black.svg"
-          alt="Menu Nav"
-          className="imgLight"
-          width={26}
-          height={26}
-          priority
-        />
-        <Image
-          src="/ico/menu_white.svg"
-          alt="Menu Nav"
-          className="imgDark"
-          width={26}
-          height={26}
-          priority
-        />
+      <div className="appbar-ico appbar-nav">
+        {isActiveMenu ? (
+          <button onClick={toggleOpenStatus}>
+            <Image
+              src="/ico/close_black.svg"
+              alt="Menu Close Button"
+              className="imgLight"
+              width={26}
+              height={26}
+              priority
+            />
+            <Image
+              src="/ico/close_white.svg"
+              alt="Menu Close Button"
+              className="imgDark"
+              width={26}
+              height={26}
+              priority
+            />
+          </button>
+        ) : (
+          <button onClick={toggleOpenStatus}>
+            <Image
+              src="/ico/menu_black.svg"
+              alt="Menu Nav"
+              className="imgLight"
+              width={26}
+              height={26}
+              priority
+            />
+            <Image
+              src="/ico/menu_white.svg"
+              alt="Menu Nav"
+              className="imgDark"
+              width={26}
+              height={26}
+              priority
+            />
+          </button>
+        )}
       </div>
     </div>
   );

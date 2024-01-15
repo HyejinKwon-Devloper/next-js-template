@@ -12,12 +12,12 @@
 
   /* 컨텐츠 영역 */
   .content-area {
-    @apply flex min-h-screen my-16 bg-white items-center justify-between rounded-md;
+    @apply flex min-h-screen max-w-full my-16 bg-white items-center justify-between rounded-md;
   }
 
   /* appbar 영역 */
   .appbar {
-    @apply flex dark:bg-gray-dark dark:text-white text-black border-b-white border-b h-14 py-1 shadow-md;
+    @apply flex max-w-full flex-row dark:bg-gray-dark dark:text-white text-black border-b-white border-b h-14 py-1 shadow-md;
   }
 
   .appbar-profile {
@@ -25,26 +25,46 @@
   }
 
   .appbar-title {
-    @apply flex-auto p-1 m-auto;
+    @apply flex-grow p-4 m-auto items-center;
   }
 
   .appbar-title h1 {
-    @apply text-black dark:text-white text-center;
+    @apply text-black dark:text-white text-left;
   }
 
   .appbar-ico {
-    @apply flex-none px-2 m-auto;
+    @apply flex-none px-1 py-4 m-auto;
   }
 
   .appbar-ico img {
     @apply mx-2;
   }
 
-  .appbar-ico .imgDark {
-    @apply hidden dark:inline;
+  .imgDark {
+    @apply hidden dark:flex;
   }
 
-  .appbar-ico .imgLight {
-    @apply inline dark:hidden;
+  .imgLight {
+    @apply flex dark:hidden;
+  }
+
+  .appbar-nav {
+    @apply flex-none lg:hidden;
+  }
+
+  .nav-area {
+    @apply hidden lg:flex lg:basis-7 lg:flex-row items-center;
+  }
+
+  .nav-area-items {
+    @apply p-4;
+  }
+
+  .nav-area-mobile {
+    @apply top-14 right-0 left-0 absolute z-50 min-h-full lg:hidden bg-gray-dark text-white m-6 p-4;
+  }
+
+  .nav-area-mobile li {
+    @apply mt-2;
   }
 }
