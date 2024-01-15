@@ -1,9 +1,8 @@
 'use client';
-import { menuState } from '@/store/globlaState';
-import { useAtomValue } from 'jotai';
+import { useMobileMenuStatus } from '@/hook/useMenuHook';
 
 export function Navigation() {
-  const isActiveMenu = useAtomValue(menuState);
+  const { isActiveMenu } = useMobileMenuStatus();
 
   return (
     <>
