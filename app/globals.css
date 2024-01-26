@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import '@/public/components.css';
+@import '@/styles/components/card.css';
 
 @layer base {
   :root {
