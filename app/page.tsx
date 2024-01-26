@@ -1,7 +1,9 @@
+import Contents from '@/components/Contents';
+
 export default function Home() {
   return (
     <main>
-      <div className="content-area" />
+      <Contents />
     </main>
   );
 }
