@@ -21,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <AppBar>
-          <Navigation />
-        </AppBar>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AppBar>
+            <Navigation />
+          </AppBar>
+          {children}
+        </Providers>
       </body>
     </html>
   );

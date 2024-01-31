@@ -40,14 +40,6 @@
     @apply mx-2;
   }
 
-  .imgDark {
-    @apply hidden dark:flex;
-  }
-
-  .imgLight {
-    @apply flex dark:hidden;
-  }
-
   .appbar-nav {
     @apply flex-none lg:hidden;
   }
