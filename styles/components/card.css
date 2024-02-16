@@ -1,15 +1,18 @@
-.card {
-  @apply rounded-lg m-4 border-gray-light bg-white shadow-sm shadow-gray-light;
-}
+@tailwind components;
+@layer components {
+  .card {
+    @apply rounded-lg m-4 border-gray-light bg-white shadow-sm shadow-gray-light;
+  }
 
-.card .outline {
-  @apply border-2;
-}
+  .card .outline {
+    @apply border-2;
+  }
 
-.card div {
-  @apply p-2;
-}
+  .card div {
+    @apply p-2;
+  }
 
-.card h2 {
-  @apply font-bold;
+  .card h2 {
+    @apply font-bold;
+  }
 }

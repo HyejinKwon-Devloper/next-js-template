@@ -10,7 +10,7 @@ export default function Providers({
   ...pageProps
 }: ThemeProviderProps) {
   return (
-    <ThemeProvider {...pageProps} attribute="class">
+    <ThemeProvider {...pageProps} defaultTheme="light" attribute="class">
       <Provider>
         <DevTools />
         {children}
