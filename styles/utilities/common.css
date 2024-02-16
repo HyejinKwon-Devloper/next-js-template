@@ -1,0 +1,11 @@
+@tailwind utilities;
+
+@layer utilities {
+  .imgDark {
+    @apply hidden dark:flex;
+  }
+
+  .imgLight {
+    @apply flex dark:hidden;
+  }
+}
