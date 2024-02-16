@@ -1,7 +1,7 @@
 @tailwind components;
 @layer components {
   .card {
-    @apply rounded-lg m-4 border-gray-light bg-white shadow-sm shadow-gray-light;
+    @apply rounded-lg m-4 border-gray-light bg-white dark:bg-gray-dark text-gray-dark dark:text-white shadow-sm shadow-gray-light;
   }
 
   .card .outline {
@@ -14,5 +14,9 @@
 
   .card h2 {
     @apply font-bold;
+  }
+
+  .card .action {
+    @apply m-auto flex-grow;
   }
 }
