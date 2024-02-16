@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .dark-invert {
+    --tw-invert: invert(100%);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  /* 컨텐츠 영역 */
+  .content-area {
+    @apply flex min-h-screen max-w-full my-16 bg-white items-center justify-between rounded-md;
+  }
+
+  /* appbar 영역 */
+  .appbar {
+    @apply flex max-w-full flex-row dark:bg-gray-dark dark:text-white text-black border-b-white border-b h-14 py-1 shadow-md;
+  }
+
+  .appbar-profile {
+    @apply flex-none px-1 m-auto;
+  }
+
+  .appbar-title {
+    @apply flex-grow p-4 m-auto items-center;
+  }
+
+  .appbar-title h1 {
+    @apply text-black dark:text-white text-left;
+  }
+
+  .appbar-ico {
+    @apply flex-none px-1 py-4 m-auto;
+  }
+
+  .appbar-ico img {
+    @apply mx-2;
+  }
+
+  .appbar-nav {
+    @apply flex-none lg:hidden;
+  }
+
+  .nav-area {
+    @apply hidden lg:flex lg:basis-7 lg:flex-row items-center;
+  }
+
+  .nav-area-items {
+    @apply p-4;
+  }
+
+  .nav-area-mobile {
+    @apply top-14 right-0 left-0 absolute z-50 min-h-full lg:hidden bg-gray-dark text-white m-6 p-4;
+  }
+
+  .nav-area-mobile li {
+    @apply mt-2;
+  }
+}

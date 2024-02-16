@@ -1,10 +1,9 @@
-import AppBar from '@/components/AppBar';
+import Contents from '@/components/Contents';
 
 export default function Home() {
   return (
     <main>
-      <AppBar />
-      <div className="content-area" />
+      <Contents />
     </main>
   );
 }
