@@ -21,8 +21,12 @@ export default function Contents() {
           <span>2023.05.05</span>
         </div>
         <div className="action">
-          <Button title="자세히보기" style="filled" />
-          <Button title="뒤로가기" />
+          <div>
+            <Button title="자세히보기" style="filled" isFull />
+          </div>
+          <div>
+            <Button title="뒤로가기" style="outlined" isFull />
+          </div>
         </div>
       </Card>
     </div>
