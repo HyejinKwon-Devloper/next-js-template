@@ -1,0 +1,14 @@
+@tailwind components;
+@layer components {
+  .table-basic {
+    @apply m-4 w-full h-full border border-separate rounded-sm;
+  }
+
+  .table-basic th {
+    @apply bg-gray-dark text-white;
+  }
+
+  td:last-child {
+    @apply text-center;
+  }
+}
