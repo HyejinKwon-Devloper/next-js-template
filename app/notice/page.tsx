@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Pagination from '@/components/Pagination';
 import Image from 'next/image';
 
 export default function NoticeList() {
@@ -11,7 +12,7 @@ export default function NoticeList() {
         <div>
           {/* TODO:: title -> children으로 변경하기 */}
           <Button
-            title={
+            children={
               <Image
                 src="/ico/add_black.svg"
                 alt="add new post"
@@ -41,7 +42,7 @@ export default function NoticeList() {
             </tr>
           </tbody>
         </table>
-        {/* TODO:: pagination */}
+        <Pagination totalItemsNumber={30} />
       </div>
     </div>
   );
