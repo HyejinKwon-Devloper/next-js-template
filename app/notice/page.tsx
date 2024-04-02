@@ -41,7 +41,7 @@ export default function NoticeList() {
               </tr>
             </tbody>
           </table>
-          <Pagination totalItemsNumber={30} />
+          <Pagination totalItemNum={300} />
         </div>
       </div>
     </div>

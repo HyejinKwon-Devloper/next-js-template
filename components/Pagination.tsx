@@ -1,65 +1,37 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { usePagination } from '@/hook/usePagination';
+import { useMemo } from 'react';
 
 type TPagination = {
-  totalItemsNumber: number;
+  totalItemNum: number;
 };
 export default function Pagination(props: TPagination) {
-  const { totalItemsNumber } = props;
-  const initialNum = 1;
+  const { totalItemNum } = props;
   const itemsPerPage = 5;
-  const totalPageNumber = Math.ceil(totalItemsNumber / itemsPerPage);
-  const [currentNum, setCurrentNum] = useState<number>(initialNum);
+  const { currentNum, pageNumbers, setPageNumber, goPrev, goNext } =
+    usePagination({
+      itemsPerPage,
+      totalItemNum: totalItemNum,
+    });
 
-  function onClickPageNumber(num: number) {
-    if (num < 1) {
-      setCurrentNum(1);
-      return;
-    } else if (num > totalPageNumber) {
-      setCurrentNum(totalPageNumber);
-      return;
-    }
-    setCurrentNum(num);
-    return;
-  }
-
-  function renderPageNumber() {
-    const pageNumbers = [];
-    for (let i = currentNum; i < currentNum + itemsPerPage; i++) {
-      if (i < totalPageNumber) {
-        pageNumbers.push(<li key={i}>{i}</li>);
-      } else {
-        pageNumbers.push(<li key={totalPageNumber}>{totalPageNumber}</li>);
-        break;
-      }
-    }
-    return pageNumbers;
-  }
-
-  const pageNumbers = useMemo(() => {
-    return renderPageNumber();
-  }, [currentNum, itemsPerPage]);
+  const renderPageNumbers = useMemo(() => {
+    return pageNumbers.map((num) => (
+      <li
+        key={num}
+        className={num === currentNum ? 'active' : ''}
+        onClick={() => setPageNumber(num)}
+      >
+        {num}
+      </li>
+    ));
+  }, [pageNumbers, currentNum]);
 
   return (
     <div className="pagination">
       <ol>
-        <li
-          children="<"
-          onClick={() => {
-            onClickPageNumber(
-              Math.floor(currentNum / 5) * itemsPerPage - itemsPerPage,
-            );
-          }}
-        />
-        {pageNumbers}
-        <li
-          children=">"
-          onClick={() => {
-            onClickPageNumber(
-              Math.ceil(currentNum / 5) * itemsPerPage + itemsPerPage,
-            );
-          }}
-        />
+        <li children="<" onClick={goPrev} />
+        {renderPageNumbers}
+        <li children=">" onClick={goNext} />
       </ol>
     </div>
   );
