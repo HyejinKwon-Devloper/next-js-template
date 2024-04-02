@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Card from './Card';
-import Button from './Button';
+import Card from '@/components/Card';
+import Button from '@/components/Button';
 
 export default function Contents() {
   return (
@@ -22,10 +22,10 @@ export default function Contents() {
         </div>
         <div className="action">
           <div>
-            <Button title="자세히보기" style="filled" isFull />
+            <Button children="자세히보기" buttonType="filled" isFull />
           </div>
           <div>
-            <Button title="뒤로가기" style="outlined" isFull />
+            <Button children="뒤로가기" buttonType="outlined" isFull />
           </div>
         </div>
       </Card>

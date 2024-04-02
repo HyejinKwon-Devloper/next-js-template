@@ -1,14 +1,34 @@
-type TButton = {
-  title: React.ReactNode | String;
-  style?: 'outlined' | 'text' | 'filled';
+import { useMemo } from 'react';
+
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  buttonType?: 'outlined' | 'text' | 'filled';
   isFull?: boolean;
   disabled?: boolean;
-};
-export default function Button(props: TButton) {
-  const { title, style = 'text', isFull = false } = props;
+}
+export default function Button(props: IButton) {
+  const {
+    children,
+    style = '',
+    isFull = false,
+    buttonType,
+    type = 'button',
+  } = props;
+
+  const customClassNames = useMemo(() => {
+    let customStyle = style;
+    if (buttonType) {
+      customStyle = `${customStyle} ${buttonType}`;
+    }
+    if (isFull) {
+      customStyle = `${customStyle} w-full`;
+    }
+    return customStyle;
+  }, [style, buttonType]);
+
   return (
-    <button className={`${style ?? style} ${isFull && 'w-full'}`}>
-      {title}
+    <button className={`${customClassNames}`} {...props}>
+      {children}
     </button>
   );
 }
