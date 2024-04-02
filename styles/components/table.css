@@ -1,7 +1,7 @@
 @tailwind components;
 @layer components {
   .table-basic {
-    @apply m-4 w-full h-full border border-separate rounded-sm;
+    @apply m-4 w-auto h-full border border-separate rounded-sm;
   }
 
   .table-basic th {
@@ -10,5 +10,21 @@
 
   td:last-child {
     @apply text-center;
+  }
+
+  .table-area {
+    @apply flex flex-col w-full;
+  }
+
+  .pagination {
+    @apply m-auto;
+  }
+
+  .pagination ul {
+    @apply flex list-none;
+  }
+
+  .pagination ul li {
+    @apply p-2 cursor-pointer;
   }
 }

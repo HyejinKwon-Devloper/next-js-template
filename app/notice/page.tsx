@@ -11,38 +11,38 @@ export default function NoticeList() {
         </div>
         <div>
           {/* TODO:: title -> children으로 변경하기 */}
-          <Button
-            children={
-              <Image
-                src="/ico/add_black.svg"
-                alt="add new post"
-                width={24}
-                height={24}
-              />
-            }
-          />
+          <Button>
+            <Image
+              src="/ico/add_black.svg"
+              alt="add new post"
+              width={24}
+              height={24}
+            />
+          </Button>
         </div>
       </div>
       <div className="content-body">
-        <table className="table-basic">
-          <colgroup>
-            <col width={'70%'} />
-            <col width={'30%'} />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>제목</th>
-              <th>작성일</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>제목</td>
-              <td>2023-05-08</td>
-            </tr>
-          </tbody>
-        </table>
-        <Pagination totalItemsNumber={30} />
+        <div className="table-area">
+          <table className="table-basic">
+            <colgroup>
+              <col width={'70%'} />
+              <col width={'30%'} />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>제목</th>
+                <th>작성일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>제목</td>
+                <td>2023-05-08</td>
+              </tr>
+            </tbody>
+          </table>
+          <Pagination totalItemsNumber={30} />
+        </div>
       </div>
     </div>
   );

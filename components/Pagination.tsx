@@ -1,5 +1,4 @@
 'use client';
-import Button from '@/components/Button';
 import { useState, useMemo } from 'react';
 
 type TPagination = {
@@ -12,7 +11,6 @@ export default function Pagination(props: TPagination) {
   const totalPageNumber = Math.ceil(totalItemsNumber / itemsPerPage);
   const [currentNum, setCurrentNum] = useState<number>(initialNum);
 
-  // TODO:: code 최적화 및 테스트 코드 작성 필요
   function onClickPageNumber(num: number) {
     if (num < 1) {
       setCurrentNum(1);
@@ -24,6 +22,7 @@ export default function Pagination(props: TPagination) {
     setCurrentNum(num);
     return;
   }
+
   function renderPageNumber() {
     const pageNumbers = [];
     for (let i = currentNum; i < currentNum + itemsPerPage; i++) {
@@ -42,28 +41,26 @@ export default function Pagination(props: TPagination) {
   }, [currentNum, itemsPerPage]);
 
   return (
-    <div>
-      <ol>
-        {/* <Button
+    <div className="pagination">
+      <ul>
+        <li
           children="<"
           onClick={() => {
-            console.log('this1', currentNum);
             onClickPageNumber(
               Math.floor(currentNum / 5) * itemsPerPage - itemsPerPage,
             );
           }}
-        /> */}
+        />
         {pageNumbers}
-        {/* <Button
+        <li
           children=">"
           onClick={() => {
-            console.log('this2', currentNum);
             onClickPageNumber(
               Math.ceil(currentNum / 5) * itemsPerPage + itemsPerPage,
             );
           }}
-        /> */}
-      </ol>
+        />
+      </ul>
     </div>
   );
 }
