@@ -42,7 +42,7 @@ export default function Pagination(props: TPagination) {
 
   return (
     <div className="pagination">
-      <ul>
+      <ol>
         <li
           children="<"
           onClick={() => {
@@ -60,7 +60,7 @@ export default function Pagination(props: TPagination) {
             );
           }}
         />
-      </ul>
+      </ol>
     </div>
   );
 }

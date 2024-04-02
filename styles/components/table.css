@@ -20,11 +20,11 @@
     @apply m-auto;
   }
 
-  .pagination ul {
+  .pagination ol {
     @apply flex list-none;
   }
 
-  .pagination ul li {
+  .pagination ol li {
     @apply p-2 cursor-pointer;
   }
 }
