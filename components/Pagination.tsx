@@ -29,9 +29,9 @@ export default function Pagination(props: TPagination) {
   return (
     <div className="pagination">
       <ol>
-        <li children="<" onClick={goPrev} />
+        <li onClick={goPrev}>{'<'}</li>
         {renderPageNumbers}
-        <li children=">" onClick={goNext} />
+        <li onClick={goNext}>{'>'}</li>
       </ol>
     </div>
   );
