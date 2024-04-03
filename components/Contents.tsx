@@ -22,10 +22,14 @@ export default function Contents() {
         </div>
         <div className="action">
           <div>
-            <Button children="자세히보기" buttonType="filled" isFull />
+            <Button buttonType="filled" isFull>
+              자세히보기
+            </Button>
           </div>
           <div>
-            <Button children="뒤로가기" buttonType="outlined" isFull />
+            <Button buttonType="outlined" isFull>
+              뒤로가기
+            </Button>
           </div>
         </div>
       </Card>
