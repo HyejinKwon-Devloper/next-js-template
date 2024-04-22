@@ -71,4 +71,8 @@
   .nav-area-mobile li {
     @apply mt-2;
   }
+
+  .loading {
+    @apply animate-spin m-auto;
+  }
 }
