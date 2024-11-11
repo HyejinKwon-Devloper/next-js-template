@@ -3,14 +3,18 @@ import Pagination from '@/components/Pagination';
 import Image from 'next/image';
 
 export default function NoticeList() {
+  // async function fetching() {
+  //   await new Promise((resolve) => setTimeout(resolve, 10000));
+  //   return <h1>fetching</h1>;
+  // }
   return (
     <div className="content-area">
+      {/* {fetching()} */}
       <div className="content-title">
         <div className="content-title-head">
           <h1>최신 게시글</h1>
         </div>
         <div>
-          {/* TODO:: title -> children으로 변경하기 */}
           <Button>
             <Image
               src="/ico/add_black.svg"
