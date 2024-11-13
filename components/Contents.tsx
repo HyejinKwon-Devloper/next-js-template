@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
@@ -22,12 +23,12 @@ export default function Contents() {
         </div>
         <div className="action">
           <div>
-            <Button buttonType="filled" isFull>
-              자세히보기
+            <Button buttontype="filled" isfull>
+              자세히 보기
             </Button>
           </div>
           <div>
-            <Button buttonType="outlined" isFull>
+            <Button buttontype="outlined" isfull>
               뒤로가기
             </Button>
           </div>
