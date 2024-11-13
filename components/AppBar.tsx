@@ -36,7 +36,7 @@ export default function AppBar(props: AppBarProps) {
         />
       </div>
       <div className="appbar-title">
-        <h1>Hello Jin's World ❤</h1>
+        <h1>Hello Jin&apos;s World ❤</h1>
       </div>
       {children && children}
       <div className="appbar-ico">
