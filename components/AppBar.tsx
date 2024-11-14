@@ -36,7 +36,7 @@ export default function AppBar(props: AppBarProps) {
         />
       </div>
       <div className="appbar-title">
-        <h1>Hello Jin's World ❤</h1>
+        <h1>Hello Jin&apos;s World ❤</h1>
       </div>
       {children && children}
       <div className="appbar-ico">
@@ -44,7 +44,7 @@ export default function AppBar(props: AppBarProps) {
           <Image
             src="/ico/light_mode_black.svg"
             alt="light mode"
-            className="imgLight hover:opacity-25 hover:animate-spin"
+            className="imgLight hover:opacity-25 hover:animate-spin py-2"
             width={20}
             height={20}
             priority
@@ -52,7 +52,7 @@ export default function AppBar(props: AppBarProps) {
           <Image
             src="/ico/dark_mode_black.svg"
             alt="dark mode"
-            className="dark:dark-invert imgDark hover:opacity-25 hover:animate-spin"
+            className="dark:dark-invert imgDark hover:opacity-25 hover:animate-spin py-2"
             width={20}
             height={20}
             priority
@@ -85,16 +85,16 @@ export default function AppBar(props: AppBarProps) {
               src="/ico/menu_black.svg"
               alt="Menu Nav"
               className="imgLight"
-              width={26}
-              height={26}
+              width={28}
+              height={28}
               priority
             />
             <Image
               src="/ico/menu_white.svg"
               alt="Menu Nav"
               className="imgDark"
-              width={26}
-              height={26}
+              width={28}
+              height={28}
               priority
             />
           </button>

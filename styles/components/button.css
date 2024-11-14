@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .filled {
+    @apply bg-gray-dark text-white dark:bg-white dark:text-gray-dark border p-2;
+  }
+
+  .outlined {
+    @apply border-gray-dark dark:border-white border p-2;
+  }
+
+  .text {
+    @apply text-gray-dark dark:text-white p-2;
+  }
+}

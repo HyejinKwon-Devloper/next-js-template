@@ -1,0 +1,34 @@
+@tailwind components;
+@layer components {
+  .table-basic {
+    @apply m-4 w-auto h-full border border-separate rounded-sm;
+  }
+
+  .table-basic th {
+    @apply bg-gray-dark text-white;
+  }
+
+  td:last-child {
+    @apply text-center;
+  }
+
+  .table-area {
+    @apply flex flex-col w-full;
+  }
+
+  .pagination {
+    @apply m-auto;
+  }
+
+  .pagination ol {
+    @apply flex list-none;
+  }
+
+  .pagination ol li {
+    @apply p-2 cursor-pointer;
+  }
+
+  .pagination ol li.active {
+    @apply text-blue-600 font-bold;
+  }
+}

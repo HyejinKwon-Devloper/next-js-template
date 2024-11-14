@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
-import Card from './Card';
+import Card from '@/components/Card';
+import Button from '@/components/Button';
 
 export default function Contents() {
   return (
@@ -18,6 +20,18 @@ export default function Contents() {
           <span>2023.04.30</span>
           <em>~</em>
           <span>2023.05.05</span>
+        </div>
+        <div className="action">
+          <div>
+            <Button buttontype="filled" isfull>
+              자세히 보기
+            </Button>
+          </div>
+          <div>
+            <Button buttontype="outlined" isfull>
+              뒤로가기
+            </Button>
+          </div>
         </div>
       </Card>
     </div>
