@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Card from '@/components/Card';
+import Card from '@/components/card/Card';
 import Button from '@/components/Button';
 
 export default function Contents() {

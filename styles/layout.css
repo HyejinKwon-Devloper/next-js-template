@@ -16,7 +16,7 @@
 
   /* 컨텐츠 영역 */
   .content-area {
-    @apply flex flex-col min-h-screen max-w-full my-16 bg-transparent items-center justify-between rounded-md border border-secondary;
+    @apply flex flex-col flex-grow my-16 bg-transparent items-center justify-between rounded-md border border-secondary;
   }
 
   .content-title {

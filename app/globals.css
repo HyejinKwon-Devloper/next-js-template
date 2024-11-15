@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @import '@/styles/utilities/common.css';
-@import '@/styles/components/layout.css';
-@import '@/styles/components/card.css';
+@import '@/styles/layout.css';
 @import '@/styles/components/button.css';
 @import '@/styles/components/table.css';
 
