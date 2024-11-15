@@ -17,6 +17,6 @@
   }
 
   .card .action {
-    @apply m-auto flex-grow;
+    @apply m-auto;
   }
 }

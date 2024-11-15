@@ -1,6 +1,6 @@
 import profileImage from '@/public/img/travel_profile.jpg';
 import Image from 'next/image';
-import Card from '@/components/Card';
+import Card from '@/components/card/Card';
 
 export default function ProfileFront() {
   return (
