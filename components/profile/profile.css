@@ -18,7 +18,7 @@ span {
 }
 
 .profile-area {
-  @apply bg-white text-black absolute shrink-0 min-w-[260px] max-h-[360px];
+  @apply bg-white text-black absolute shrink-0 w-[260px] max-h-[360px];
   backface-visibility: hidden;
 }
 
@@ -31,7 +31,7 @@ span {
 }
 
 .front-profile-body {
-  @apply mt-4 basis-2/3 max-h-[200px] m-auto text-wrap text-center items-center content-center;
+  @apply mt-4 basis-2/3 max-h-[200px] m-auto text-wrap text-center items-center content-center text-ellipsis overflow-auto;
 }
 
 div + hr {

@@ -32,7 +32,7 @@ export default function ProfileBack(props: TProfileFront) {
         />
         <h1 className="back-trip-name">
           <p>Jin</p>
-          <span className="sub">Hello, I'm Jin</span>
+          <span className="sub">Hello, I{`'`}m Jin</span>
         </h1>
         <div className="back-trip-detail">
           <span className="sub">Last Trip</span>
