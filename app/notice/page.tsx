@@ -1,5 +1,5 @@
 import Button from '@/components/Button';
-import Pagination from '@/components/Pagination';
+import Table from '@/components/table/Table';
 import Image from 'next/image';
 
 export default function NoticeList() {
@@ -22,27 +22,32 @@ export default function NoticeList() {
         </div>
       </div>
       <div className="content-body">
-        <div className="table-area">
-          <table className="table-basic">
-            <colgroup>
-              <col width={'70%'} />
-              <col width={'30%'} />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>제목</th>
-                <th>작성일</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>제목</td>
-                <td>2023-05-08</td>
-              </tr>
-            </tbody>
-          </table>
-          <Pagination totalItemNum={300} />
-        </div>
+        <Table totalItemNum={3}>
+          <colgroup>
+            <col width={'70%'} />
+            <col width={'30%'} />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>제목</th>
+              <th>작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>제목</td>
+              <td>2023-05-08</td>
+            </tr>
+            <tr>
+              <td>제목</td>
+              <td>2023-05-08</td>
+            </tr>
+            <tr>
+              <td>제목</td>
+              <td>2023-05-08</td>
+            </tr>
+          </tbody>
+        </Table>
       </div>
     </div>
   );
