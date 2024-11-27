@@ -1,0 +1,46 @@
+@tailwind components;
+@layer components {
+  .table-area {
+    @apply flex flex-col w-full;
+  }
+
+  .table-basic {
+    @apply m-4 w-auto h-full text-left border-gray-light border-[1px] border-collapse rounded-md;
+  }
+
+  .table-basic table {
+    @apply min-w-full;
+  }
+
+  tr + tr {
+    @apply border-gray-light border-t-[1px];
+  }
+
+  .table-basic th {
+    @apply text-gray-dark dark:text-white dark:font-bold border-b p-2;
+  }
+
+  .table-basic td {
+    @apply p-2 text-gray dark:text-white;
+  }
+
+  .table-basic .no-item {
+    @apply text-center;
+  }
+
+  .pagination {
+    @apply m-auto;
+  }
+
+  .pagination ol {
+    @apply flex list-none;
+  }
+
+  .pagination ol li {
+    @apply p-2 cursor-pointer;
+  }
+
+  .pagination ol li.active {
+    @apply text-blue-600 font-bold;
+  }
+}
