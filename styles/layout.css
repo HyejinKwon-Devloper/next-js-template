@@ -1,6 +1,4 @@
-@tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @layer components {
   .dark-invert {
@@ -16,15 +14,15 @@
 
   /* 컨텐츠 영역 */
   .content-area {
-    @apply flex flex-col flex-grow my-16 bg-transparent items-center justify-between rounded-md border border-secondary;
+    @apply flex flex-col flex-grow mt-8 mb-4 bg-transparent items-center justify-between rounded-md border border-secondary px-8 py-4;
   }
 
   .content-title {
-    @apply flex w-full px-8 pt-4 pb-2 bg-transparent rounded-md;
+    @apply flex w-full pt-4 pb-2 bg-transparent rounded-md;
   }
 
   .content-title-head {
-    @apply flex grow text-center m-auto;
+    @apply flex grow text-center m-auto dark:text-white;
   }
 
   .content-body {
@@ -74,5 +72,9 @@
 
   .nav-area-mobile li {
     @apply mt-2;
+  }
+
+  .loading {
+    @apply animate-spin m-auto;
   }
 }
