@@ -1,10 +1,8 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+@import '@/styles/components/button.css';
 @import '@/styles/utilities/common.css';
 @import '@/styles/layout.css';
-@import '@/styles/components/button.css';
 
 @layer base {
   :root {
@@ -15,10 +13,6 @@
     --color-secondary: rgb(166 166 166);
     padding: 24px;
     max-width: 100vw;
-  }
-
-  button {
-    @apply text-gray-dark dark:text-white rounded-md;
   }
 }
 
