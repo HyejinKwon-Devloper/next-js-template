@@ -10,7 +10,7 @@ type TProfileFront = {
 export default function ProfileBack(props: TProfileFront) {
   return (
     <Card
-      appendclassName="profile-area back-style"
+      appendclassname="profile-area back-style"
       onClick={props.handleCardRotate}
     >
       <div className="back-profile-image">

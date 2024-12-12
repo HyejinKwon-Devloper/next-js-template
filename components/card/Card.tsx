@@ -3,15 +3,15 @@ import '@/components/card/card.css';
 
 interface ICard extends React.HtmlHTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  appendclassName?: string;
+  appendclassname?: string;
   variant?: 'outline';
 }
 export default function Card(props: ICard) {
-  const { children, appendclassName, variant } = props;
+  const { children, appendclassname, variant } = props;
 
   return (
     <div
-      className={`card ${variant ? 'outline' : ''} ${appendclassName}`}
+      className={`card ${variant ? 'outline' : ''} ${appendclassname}`}
       {...props}
     >
       {children}
