@@ -1,0 +1,32 @@
+.form-area {
+  /* @apply flex my-10 flex-col p-2 grow min-w-full; */
+  @apply flex flex-col w-full;
+}
+
+.form-area .form-attribute {
+  @apply flex sm:flex-row flex-col flex-grow-0;
+}
+
+.form-title {
+  @apply flex w-[134px];
+}
+
+.form-content {
+  @apply flex w-full flex-shrink;
+}
+
+.form-content input {
+  @apply placeholder:text-gray grow shadow-sm shadow-gray-light rounded-sm pl-2 pr-4 py-2 max-w-full;
+}
+
+.form-content textarea {
+  @apply min-w-full rounded-sm min-h-28 shadow-sm shadow-gray-light;
+}
+
+.form-action {
+  @apply mx-4 flex flex-row gap-2 justify-center;
+}
+
+.form-action div {
+  @apply flex min-w-[15%];
+}
