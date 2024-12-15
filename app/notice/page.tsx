@@ -1,24 +1,32 @@
 import Button from '@/components/Button';
 import Table from '@/components/table/Table';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function NoticeList() {
   return (
-    <div className="content-area">
+    <div className="main-container">
       <div className="content-title">
         <div className="content-title-head">
           <h1>최신 게시글</h1>
         </div>
         <div>
-          {/* TODO:: title -> children으로 변경하기 */}
-          <Button>
+          <Link href={'/notice/add'}>
             <Image
               src="/ico/add_black.svg"
               alt="add new post"
+              className="imgLight"
               width={24}
               height={24}
             />
-          </Button>
+            <Image
+              src="/ico/add_white.svg"
+              alt="add new post white"
+              className="dark:dark-invert imgDark"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
       </div>
       <div className="content-body">
