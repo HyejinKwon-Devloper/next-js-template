@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 
 export default function NoticeContents() {
   return (
-    <div className="content-area">
+    <div className="sub-container">
       <div className="content-body">
         <Card>
           <div className="card-title">Title입니다.</div>

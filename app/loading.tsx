@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Loading() {
   return (
-    <div className="content-area">
+    <div className="sub-container">
       <Image
         className="loading imgLight"
         src="/ico/loading_black.svg"

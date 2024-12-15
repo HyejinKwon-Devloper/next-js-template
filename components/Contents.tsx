@@ -5,7 +5,7 @@ import Button from '@/components/Button';
 
 export default function Contents() {
   return (
-    <div className="content-area">
+    <div className="sub-container">
       <Card>
         <div className="card-title">
           <Image
