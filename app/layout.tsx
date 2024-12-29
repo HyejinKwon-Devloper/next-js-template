@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: "Hello Jin's World",
   description: 'Next.js와 친해지기 프로젝트입니다!',
-  viewport: 'width=device-width, initial-scale=1.0',
+  viewport:
+    'width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no',
 };
 
 export default function RootLayout({

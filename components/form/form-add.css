@@ -1,5 +1,6 @@
-.content-area .form-area {
-  @apply flex my-10 w-full flex-col p-2;
+.form-area {
+  /* @apply flex my-10 flex-col p-2 grow min-w-full; */
+  @apply flex flex-col w-full;
 }
 
 .form-area .form-attribute {

@@ -8,7 +8,7 @@ type TProfileFront = {
 
 export default function ProfileFront(props: TProfileFront) {
   return (
-    <Card appendclassName="profile-area" onClick={props.handleCardRotate}>
+    <Card appendclassname="profile-area" onClick={props.handleCardRotate}>
       <div className="profile-title">
         <div>
           <Image
