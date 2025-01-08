@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { create } from '@/app/notice/add/action';
+import { useFormStatus } from 'react-dom';
+import { create } from '@/app/notice/add/api/action';
 import Form from 'next/form';
 import Button from '@/components/Button';
 import Card from '@/components/card/Card';
@@ -8,6 +9,7 @@ import '@/components/form/form-add.css';
 
 export default function NoticeAdd() {
   const router = useRouter();
+  const { pending } = useFormStatus();
 
   function goBack(destination: string) {
     router.push(destination);
@@ -21,7 +23,7 @@ export default function NoticeAdd() {
         </div>
       </div>
       <div className="content-body">
-        <Form action={create} className="form-area">
+        <Form action={create} formMethod="POST" className="form-area">
           <Card>
             <div className="form-attribute">
               <div className="form-title">제목</div>
@@ -29,24 +31,15 @@ export default function NoticeAdd() {
                 <input
                   type="text"
                   name="title"
+                  required
                   placeholder="제목을 입력하세요."
-                />
-              </div>
-            </div>
-            <div className="form-attribute">
-              <div className="form-title">등록일</div>
-              <div className="form-content">
-                <input
-                  type="date"
-                  name="regDate"
-                  placeholder="날짜를 입력하세요."
                 />
               </div>
             </div>
             <div className="form-attribute">
               <div className="form-title">내용</div>
               <div className="form-content">
-                <textarea name="contents" />
+                <textarea name="contents" maxLength={500} required />
               </div>
             </div>
           </Card>
@@ -56,6 +49,7 @@ export default function NoticeAdd() {
                 buttontype="outlined"
                 isfull
                 type="button"
+                disabled={pending}
                 onClick={() => {
                   goBack('/notice');
                 }}
@@ -64,7 +58,12 @@ export default function NoticeAdd() {
               </Button>
             </div>
             <div>
-              <Button type="submit" buttontype="filled" isfull>
+              <Button
+                type="submit"
+                buttontype="filled"
+                isfull
+                disabled={pending}
+              >
                 확인
               </Button>
             </div>
