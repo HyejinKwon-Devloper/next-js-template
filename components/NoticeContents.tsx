@@ -1,24 +1,35 @@
 'use client';
-import Image from 'next/image';
 import Card from '@/components/card/Card';
-import Button from '@/components/Button';
+import { create } from '@/app/notice/api/action';
+import { useEffect, useState } from 'react';
+
+interface INotice {
+  bnum: number;
+  title: string;
+  contents: string;
+}
 
 export default function NoticeContents() {
+  const [notices, setNotices] = useState<Array<INotice>>();
+
+  async function getNoticeList() {
+    const response = await create({ startNum: 0, limit: 3 });
+    response && setNotices(response.contents);
+  }
+
+  useEffect(() => {
+    getNoticeList();
+  }, []);
+
   return (
     <div className="sub-container">
       <div className="content-body">
-        <Card>
-          <div className="card-title">Title입니다.</div>
-          <div className="card-subtitle">
-            내용블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-          </div>
-        </Card>
-        <Card>
-          <div className="card-title">Title입니다.</div>
-          <div className="card-subtitle">
-            내용블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라블라
-          </div>
-        </Card>
+        {notices?.map((notice) => (
+          <Card appendclassname="w-full">
+            <div className="card-title">{notice.title}</div>
+            <div className="card-subtitle">{notice.contents}</div>
+          </Card>
+        ))}
       </div>
     </div>
   );
