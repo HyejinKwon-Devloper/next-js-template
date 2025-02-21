@@ -25,7 +25,7 @@ export default function NoticeContents() {
     <div className="sub-container">
       <div className="content-body">
         {notices?.map((notice) => (
-          <Card appendclassname="w-full">
+          <Card key={notice.bnum} appendclassname="w-full">
             <div className="card-title">{notice.title}</div>
             <div className="card-subtitle">{notice.contents}</div>
           </Card>

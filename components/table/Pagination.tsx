@@ -1,25 +1,31 @@
 'use client';
-import { usePagination } from '@/hook/usePagination';
+
 import { useMemo } from 'react';
+
+import { usePagination } from '@/hook/usePagination';
 
 type TPagination = {
   totalItemNum: number;
+  handlePageNum: (pageNumber: number) => void;
+  itemsPerPage?: number;
 };
 export default function Pagination(props: TPagination) {
-  const { totalItemNum } = props;
-  const itemsPerPage = 5;
+  const { totalItemNum, itemsPerPage = 5, handlePageNum } = props;
   const { currentNum, pageNumbers, setPageNumber, goPrev, goNext } =
     usePagination({
       itemsPerPage,
-      totalItemNum: totalItemNum,
+      totalItemNum,
     });
 
-  const renderPageNumbers = useMemo(() => {
+  const renderPageNumbers = useMemo(async () => {
     return pageNumbers.map((num) => (
       <li
         key={num}
         className={num === currentNum ? 'active' : ''}
-        onClick={() => setPageNumber(num)}
+        onClick={() => {
+          handlePageNum(currentNum);
+          setPageNumber(num);
+        }}
       >
         {num}
       </li>

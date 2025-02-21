@@ -12,6 +12,10 @@
     @apply min-w-full;
   }
 
+  thead {
+    @apply border-b-4 border-gray-light border-double;
+  }
+
   tr + tr {
     @apply border-gray-light border-t-[1px];
   }

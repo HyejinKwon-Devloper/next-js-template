@@ -5,6 +5,8 @@ interface INotice {
   bnum: number;
   title: string;
   contents: string;
+  regDate: string;
+  uptDate: string;
 }
 interface INoticeList {
   totalItemsNum: number;
@@ -13,7 +15,7 @@ interface INoticeList {
 export async function create(props: TInput): Promise<INoticeList | undefined> {
   try {
     const response = await fetch(
-      `${process.env.SERVER_HOST}:${process.env.SERVER_PORT}/notice?startNum=${props.startNum}&limit=${props.limit}`,
+      `${process.env.SERVER_URL}/notice?startNum=${props.startNum}&limit=${props.limit}`,
       {
         method: 'GET',
       },

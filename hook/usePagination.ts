@@ -14,29 +14,28 @@ export function usePagination(props: TPageNumberProps) {
 
   const totalPages = Math.ceil(totalItemNum / itemsPerPage);
 
-  function calculatePageNumber() {
-    const pageNumbers = [];
-    const endOfCurrentPage =
-      Math.ceil(currentNum / itemsPerPage) * itemsPerPage;
-    const startOfCurrentPage = endOfCurrentPage - itemsPerPage + 1;
-
-    for (let i = startOfCurrentPage; i <= endOfCurrentPage; i++) {
-      if (i < totalPages) {
-        pageNumbers.push(i);
-      } else {
-        pageNumbers.push(totalPages);
-        break;
-      }
-    }
-    setEndOfPage(endOfCurrentPage);
-    setStartOfPage(startOfCurrentPage);
-
-    return pageNumbers;
-  }
-
   const pageNumbers = useMemo(() => {
+    function calculatePageNumber() {
+      const pageNumbers = [];
+      const endOfCurrentPage =
+        Math.ceil(currentNum / itemsPerPage) * itemsPerPage;
+      const startOfCurrentPage = Math.abs(endOfCurrentPage - itemsPerPage) + 1;
+      for (let i = startOfCurrentPage; i <= endOfCurrentPage; i++) {
+        if (i < totalPages) {
+          pageNumbers.push(i);
+        } else {
+          pageNumbers.push(totalPages);
+          break;
+        }
+      }
+      setEndOfPage(endOfCurrentPage);
+      setStartOfPage(startOfCurrentPage);
+
+      return pageNumbers;
+    }
+
     return calculatePageNumber();
-  }, [currentNum, itemsPerPage]);
+  }, [totalItemNum, itemsPerPage, currentNum]);
 
   function setPageNumber(num: number) {
     setCurrentPage(num > 0 ? Math.min(num, totalPages) : 1);
