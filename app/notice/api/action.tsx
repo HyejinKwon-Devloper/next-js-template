@@ -1,5 +1,8 @@
 'use server';
-type TInput = { startNum: Number; limit: number };
+interface IInput {
+  startNum: number;
+  limit: number;
+}
 
 interface INotice {
   bnum: number;
@@ -12,7 +15,7 @@ interface INoticeList {
   totalItemsNum: number;
   contents?: Array<INotice>;
 }
-export async function create(props: TInput): Promise<INoticeList | undefined> {
+export async function create(props: IInput): Promise<INoticeList | undefined> {
   try {
     const response = await fetch(
       `${process.env.SERVER_URL}/notice?startNum=${props.startNum}&limit=${props.limit}`,
@@ -21,9 +24,13 @@ export async function create(props: TInput): Promise<INoticeList | undefined> {
       },
     )
       .then((response) => response.json())
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        /* eslint-disable-next-line no-console */
+        console.error(error);
+      });
     return response;
   } catch (Error) {
-    console.log(Error);
+    /* eslint-disable-next-line no-console */
+    console.error(Error);
   }
 }

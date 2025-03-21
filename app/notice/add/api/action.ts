@@ -12,10 +12,14 @@ export async function create(formData: FormData) {
       body: JSON.stringify(keyval),
     });
     if (!res.ok) {
-      console.log('fail');
+      // error log 남기기
+      /* eslint-disable-next-line no-console */
+      console.error();
     }
   } catch (Error) {
-    console.log(Error);
+    // error log 남기기
+    /* eslint-disable-next-line no-console */
+    console.error(Error);
   }
   redirect('/notice');
 }

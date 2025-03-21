@@ -1,12 +1,13 @@
 'use client';
-import { useMobileMenuStatus } from '@/hook/useMenuHook';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
-type AppBarProps = {
+import { useMobileMenuStatus } from '@/hook/useMenuHook';
+
+interface IAppBarProps {
   children?: React.ReactNode;
-};
-export default function AppBar(props: AppBarProps) {
+}
+export default function AppBar(props: IAppBarProps) {
   const { children } = props;
   const { theme, setTheme } = useTheme();
   const { isActiveMenu, toggleOpenStatus } = useMobileMenuStatus();

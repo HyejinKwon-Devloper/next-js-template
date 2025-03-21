@@ -1,7 +1,8 @@
 'use client';
+import { useEffect, useState } from 'react';
+
 import Card from '@/components/card/Card';
 import { create } from '@/app/notice/api/action';
-import { useEffect, useState } from 'react';
 
 interface INotice {
   bnum: number;

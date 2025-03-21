@@ -1,13 +1,14 @@
+import Image from 'next/image';
+
 import Card from '@/components/card/Card';
 import NameCard from '@/public/CardProfile.svg';
 import profileImage from '@/public/img/travel_profile.jpg';
-import Image from 'next/image';
 
-type TProfileFront = {
+interface IProfileFront {
   handleCardRotate: (event: React.MouseEvent<HTMLDivElement>) => void;
-};
+}
 
-export default function ProfileBack(props: TProfileFront) {
+export default function ProfileBack(props: IProfileFront) {
   return (
     <Card
       appendclassname="profile-area back-style"
@@ -18,16 +19,16 @@ export default function ProfileBack(props: TProfileFront) {
           className="back-top-image"
           src={profileImage}
           alt="profileImage"
-          width={'244'}
-          height={'200'}
+          width="244"
+          height="200"
           objectFit="cover"
         />
         <Image
           className="back-bottom-image"
           src={NameCard}
           alt="namecard"
-          width={'244'}
-          height={'167'}
+          width="244"
+          height="167"
           objectFit="cover"
         />
         <h1 className="back-trip-name">

@@ -33,18 +33,14 @@
   }
 
   .pagination {
-    @apply m-auto;
+    @apply m-auto flex list-none;
   }
 
-  .pagination ol {
-    @apply flex list-none;
-  }
-
-  .pagination ol li {
+  .pagination li {
     @apply p-2 cursor-pointer;
   }
 
-  .pagination ol li.active {
+  .pagination li.active {
     @apply text-blue-600 font-bold;
   }
 }

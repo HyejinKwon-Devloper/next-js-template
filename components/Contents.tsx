@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+
 import Card from '@/components/card/Card';
 import Button from '@/components/Button';
 
@@ -11,8 +12,8 @@ export default function Contents() {
           <Image
             src="/img/20230503_141710.jpg"
             alt="titleImg"
-            width={'260'}
-            height={'232'}
+            width="260"
+            height="232"
           />
         </div>
         <div>
@@ -39,8 +40,8 @@ export default function Contents() {
           <Image
             src="/img/20230503_141710.jpg"
             alt="titleImg"
-            width={'260'}
-            height={'232'}
+            width="260"
+            height="232"
           />
         </div>
         <div>

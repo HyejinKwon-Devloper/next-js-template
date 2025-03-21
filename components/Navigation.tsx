@@ -1,4 +1,6 @@
 'use client';
+import Link from 'next/link';
+
 import { useMobileMenuStatus } from '@/hook/useMenuHook';
 
 export function Navigation() {
@@ -8,13 +10,13 @@ export function Navigation() {
     <>
       <div className="nav-area">
         <div className="nav-area-items">
-          <a href="#">Home</a>
+          <Link href="/">Home</Link>
         </div>
         <div className="nav-area-items">
-          <a href="#">About</a>
+          <Link href="/">About</Link>
         </div>
         <div className="nav-area-items">
-          <a href="#">Contact</a>
+          <Link href="/">Contact</Link>
         </div>
       </div>
       {isActiveMenu && (
@@ -22,13 +24,13 @@ export function Navigation() {
           <nav>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a href="#">About</a>
+                <Link href="/">About</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link href="/">Contact</Link>
               </li>
             </ul>
           </nav>

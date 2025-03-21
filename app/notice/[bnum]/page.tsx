@@ -1,3 +1,3 @@
 export default function Notice() {
-  return <div></div>;
+  return <div>to be confinued</div>;
 }

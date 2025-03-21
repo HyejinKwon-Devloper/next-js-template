@@ -1,11 +1,12 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Table from '@/components/table/Table';
 import Image from 'next/image';
 import Link from 'next/link';
-import { create } from '@/app/notice/api/action';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+import Table from '@/components/table/Table';
 import Pagination from '@/components/table/Pagination';
+import { create } from '@/app/notice/api/action';
 
 interface INotice {
   bnum: number;
@@ -29,18 +30,16 @@ export default function NoticeList() {
     router.push(`/notice/${bnum}`);
   };
 
-  async function getNoticeList() {
-    const response = await create({ startNum: currentNum - 1, limit: 5 });
-    console.log(response);
-    response && (await setNotices(response.contents));
-    response && (await setTotalItemsNum(response.totalItemsNum));
-  }
-
   const handleCurrentNum = (pageNumber: number) => {
     setCurrentNum(pageNumber);
   };
 
   useEffect(() => {
+    async function getNoticeList() {
+      const response = await create({ startNum: currentNum - 1, limit: 5 });
+      response && (await setNotices(response.contents));
+      response && (await setTotalItemsNum(response.totalItemsNum));
+    }
     getNoticeList();
   }, [currentNum]);
 
@@ -51,7 +50,7 @@ export default function NoticeList() {
           <h1>최신 게시글</h1>
         </div>
         <div>
-          <Link href={'/notice/add'}>
+          <Link href="/notice/add">
             <Image
               src="/ico/add_black.svg"
               alt="add new post"
@@ -72,8 +71,8 @@ export default function NoticeList() {
       <div className="content-body">
         <Table isNoItem={!(totalItemsNum || 0)}>
           <colgroup>
-            <col width={'70%'} />
-            <col width={'30%'} />
+            <col width="70%" />
+            <col width="30%" />
           </colgroup>
           <thead>
             <tr>

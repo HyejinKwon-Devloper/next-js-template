@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonHTMLAttributes, DetailedHTMLProps, useMemo } from 'react';
+import { useMemo } from 'react';
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export default function Button(props: IButton) {
       customStyle = `${customStyle} w-full`;
     }
     return customStyle;
-  }, [props, buttontype]);
+  }, [props, isfull, buttontype]);
 
   const finalProps = useMemo(() => {
     const tempProps = { ...props };
@@ -31,7 +31,11 @@ export default function Button(props: IButton) {
   }, [customClassNames]);
 
   return (
-    <button className={`${customClassNames}`} {...(finalProps && finalProps)}>
+    <button
+      type={`${type}`}
+      className={`${customClassNames}`}
+      {...(finalProps && finalProps)}
+    >
       {children}
     </button>
   );

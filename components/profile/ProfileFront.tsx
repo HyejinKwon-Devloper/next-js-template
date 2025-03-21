@@ -1,12 +1,13 @@
-import profileImage from '@/public/img/travel_profile.jpg';
 import Image from 'next/image';
+
+import profileImage from '@/public/img/travel_profile.jpg';
 import Card from '@/components/card/Card';
 
-type TProfileFront = {
+interface IProfileFront {
   handleCardRotate: (event: React.MouseEvent<HTMLDivElement>) => void;
-};
+}
 
-export default function ProfileFront(props: TProfileFront) {
+export default function ProfileFront(props: IProfileFront) {
   return (
     <Card appendclassname="profile-area" onClick={props.handleCardRotate}>
       <div className="profile-title">
@@ -15,8 +16,8 @@ export default function ProfileFront(props: TProfileFront) {
             className="front-profile-image"
             src={profileImage}
             alt="profileImage"
-            width={'120'}
-            height={'120'}
+            width="120"
+            height="120"
           />
         </div>
         <div>
