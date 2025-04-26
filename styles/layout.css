@@ -14,11 +14,11 @@
 
   /* 컨텐츠 영역 */
   .main-container {
-    @apply flex flex-col gap-4 flex-grow max-w-full mt-8 mb-4 bg-transparent items-center justify-between rounded-md border border-secondary px-8 py-4;
+    @apply flex flex-col gap-4 max-w-full overflow-hidden  mt-8 mb-4 bg-transparent items-center justify-between rounded-md border border-secondary px-8 py-4;
   }
 
   .sub-container {
-    @apply flex flex-row w-full max-w-[1516px] mx-4 px-8 py-4 overflow-hidden;
+    @apply flex flex-row mx-4 px-8 py-4 max-w-full;
   }
 
   .content-title {

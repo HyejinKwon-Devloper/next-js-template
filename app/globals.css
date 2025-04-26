@@ -1,6 +1,7 @@
 @tailwind base;
 
 @import '@/styles/components/button.css';
+@import '@/styles/components/carousel.css';
 @import '@/styles/utilities/common.css';
 @import '@/styles/layout.css';
 

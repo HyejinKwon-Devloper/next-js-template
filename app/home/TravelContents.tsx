@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Card from '@/components/card/Card';
 import Button from '@/components/Button';
+import { useState } from 'react';
 
 const dataSet = [
   {
@@ -90,10 +91,26 @@ const dataSet = [
   },
 ];
 export default function Contents() {
+  const [currentIndex, setIndex] = useState<number>(1);
+  
+  function handlePrevButton(){
+    setIndex((prev) => prev-1);
+  }
+  function handleNextButton(){
+    setIndex((prev) => prev+1);
+  }
   return (
     <div className="sub-container">
+    <div className='carousel-container'>
+      <Button className='btn-prev' onClick={handlePrevButton}>
+        <Image src="/ico/add_black.svg" alt="prev" width={100} height={100}/>
+      </Button>
       {dataSet?.map((data) => {
         return (
+          <div style={{
+            transform: `translateX(-${(currentIndex * (300 + 20))}px)`,
+            transition: "transform 0.5s ease-in-out"
+          }}>
           <Card>
             <div className="card-title">
               <Image src={data.src} alt={data.alt} width={260} height={232} />
@@ -117,8 +134,13 @@ export default function Contents() {
               </div>
             </div>
           </Card>
+          </div>
         );
       })}
+      <Button className='btn-next' onClick={handleNextButton}>
+        <Image src="/ico/add_black.svg" alt="next" width={100} height={100}/>
+      </Button>
+      </div>
     </div>
   );
 }
