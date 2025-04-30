@@ -1,14 +1,13 @@
 @tailwind components;
 
 @layer components {
-    .carousel-container {
-        @apply flex overflow-x-hidden w-full overflow-y-hidden items-center;
-    }
-    .carousel-container .btn-prev {
-        @apply flex absolute z-50;
-    }
-    .carousel-container .btn-next {
-        @apply flex absolute z-50 right-16;
-    }
-
+  .carousel-container {
+    @apply flex overflow-x-hidden w-full overflow-y-hidden items-center;
+  }
+  .sub-container .btn-prev {
+    @apply flex static z-50;
+  }
+  .sub-container .btn-next {
+    @apply flex static z-50;
+  }
 }
