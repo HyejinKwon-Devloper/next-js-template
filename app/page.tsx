@@ -1,5 +1,9 @@
 'use client';
-import TravelContents from '@/app/home/TravelContents';
+import dynamic from 'next/dynamic';
+
+const TravelContents = dynamic(() => import('@/app/home/TravelContents'), {
+  ssr: false,
+});
 import NoticeContents from '@/app/home/NoticeContents';
 import ProfileContainer from '@/components/profile/ProfileContainer';
 import Link from 'next/link';
