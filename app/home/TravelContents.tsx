@@ -124,7 +124,7 @@ export default function Contents() {
     setIndex((prev) => (prev - 1 < 0 ? 0 : prev - 1));
   }
   function handleNextButton() {
-    setIndex((prev) => (prev + 1) % (dataSet.length - limit + 1));
+    setIndex((prev) => (prev + 1) % (dataSet.length - limit));
   }
 
   useEffect(() => {
