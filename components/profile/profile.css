@@ -6,7 +6,7 @@ span {
 }
 
 .profile-container {
-  @apply flex flex-col max-w-full my-16 bg-transparent items-center justify-between hover:cursor-pointer
+  @apply flex flex-col min-w-[309px] h-[886px] mt-8 mb-4 bg-transparent items-center justify-between hover:cursor-pointer
   static;
   perspective: 1000px;
 }

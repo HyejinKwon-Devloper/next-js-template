@@ -1,6 +1,10 @@
 'use client';
-import Contents from '@/components/Contents';
-import NoticeContents from '@/components/NoticeContents';
+import dynamic from 'next/dynamic';
+
+const TravelContents = dynamic(() => import('@/app/home/TravelContents'), {
+  ssr: false,
+});
+import NoticeContents from '@/app/home/NoticeContents';
 import ProfileContainer from '@/components/profile/ProfileContainer';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -30,7 +34,7 @@ export default function Home() {
             />
             최근 여행
           </Link>
-          <Contents />
+          <TravelContents />
           <Link className="content-title" href={'/notice'}>
             <Image
               src="/ico/list_black.svg"
