@@ -6,13 +6,12 @@ span {
 }
 
 .profile-container {
-  @apply flex flex-col min-w-[309px] h-[886px] mt-8 mb-4 bg-transparent items-center justify-between hover:cursor-pointer
-  static;
+  @apply flex flex-col min-w-[309px] mt-8 mb-4 bg-transparent items-center justify-between static;
   perspective: 1000px;
 }
 
 .profile-card-flip-ani {
-  @apply relative;
+  @apply relative hover:cursor-pointer;
   transform-style: preserve-3d;
   transition: transform 1s ease-in-out;
 }
