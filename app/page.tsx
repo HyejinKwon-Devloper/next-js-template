@@ -1,11 +1,14 @@
 'use client';
 import dynamic from 'next/dynamic';
 
-const TravelContents = dynamic(() => import('@/app/home/TravelContents'), {
-  ssr: false,
-});
-import NoticeContents from '@/app/home/NoticeContents';
-import ProfileContainer from '@/components/profile/ProfileContainer';
+const TravelContents = dynamic(
+  () => import('@/app/home/right-side/TravelContents'),
+  {
+    ssr: false,
+  },
+);
+import NoticeContents from '@/app/home/right-side/NoticeContents';
+import ProfileContainer from '@/app/home/left-side/LeftSideContainer';
 import Link from 'next/link';
 import Image from 'next/image';
 
