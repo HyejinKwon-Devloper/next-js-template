@@ -8,11 +8,11 @@
 }
 
 .form-title {
-  @apply flex w-[134px];
+  @apply flex max-w-32;
 }
 
 .form-content {
-  @apply flex w-full flex-shrink;
+  @apply flex w-full;
 }
 
 .form-content input {
