@@ -1,10 +1,14 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useFormStatus } from 'react-dom';
-import { create } from '@/app/notice/add/api/action';
+
 import Form from 'next/form';
+
 import Button from '@/components/Button';
 import Card from '@/components/card/Card';
+
+import { createNotice } from '@/app/notice/actions';
+
 import '@/components/form/form-add.css';
 
 export default function NoticeAdd() {
@@ -15,6 +19,16 @@ export default function NoticeAdd() {
     router.push(destination);
   }
 
+  async function handleSubmit(formData: FormData) {
+    const res = await createNotice(formData);
+    if (res.status === 200) {
+      alert('등록되었습니다.');
+      router.push('/notice');
+    } else {
+      alert('등록 실패했습니다.');
+    }
+  }
+
   return (
     <div className="main-container">
       <div className="content-title">
@@ -23,7 +37,7 @@ export default function NoticeAdd() {
         </div>
       </div>
       <div className="content-body">
-        <Form action={create} formMethod="POST" className="form-area">
+        <Form action={handleSubmit} formMethod="POST" className="form-area">
           <Card>
             <div className="form-attribute">
               <div className="form-title">제목</div>

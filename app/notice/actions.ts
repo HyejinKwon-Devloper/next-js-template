@@ -1,7 +1,6 @@
 'use server';
-import { redirect } from 'next/navigation';
 
-export async function create(formData: FormData) {
+export async function createNotice(formData: FormData) {
   const keyval = Object.fromEntries(formData.entries());
   try {
     const res = await fetch('http://localhost:3000/api/notice', {
@@ -12,10 +11,12 @@ export async function create(formData: FormData) {
       body: JSON.stringify(keyval),
     });
     if (!res.ok) {
-      console.log('fail');
+      return { error: 'Internal Server Error', status: 500 };
+    } else {
+      return { status: 200 };
     }
   } catch (Error) {
     console.log(Error);
+    return { error: 'Internal Server Error', status: 500 };
   }
-  redirect('/notice');
 }
