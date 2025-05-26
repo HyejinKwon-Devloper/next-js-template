@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 export async function create(formData: FormData) {
   const keyval = Object.fromEntries(formData.entries());
   try {
-    const res = await fetch('http://192.168.0.24:10040/notice/add', {
+    const res = await fetch('http://localhost:3000/api/notice', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -18,7 +18,7 @@
   }
 
   .sub-container {
-    @apply flex flex-row py-4 max-w-full items-center;
+    @apply flex flex-row py-4 w-full items-center;
   }
 
   .content-title {
@@ -31,6 +31,10 @@
 
   .content-body {
     @apply flex flex-auto flex-wrap justify-start items-start w-full p-4 bg-transparent rounded-md;
+  }
+
+  .content-body div {
+    @apply w-full;
   }
 
   /* appbar 영역 */
