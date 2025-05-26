@@ -10,15 +10,18 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const limit = searchParams.get('limit');
   const offset = searchParams.get('offset');
+  const bnum = searchParams.get('bnum');
 
   let result;
   if (limit && offset) {
     const sql =
       'SELECT bnum, title, contents, regDate FROM notice_board ORDER BY bnum DESC';
     result = await selectSQL(sql + ` limit ${limit} offset ${offset}`);
-  } else {
-    const sql = 'SELECT title, contents FROM notice_board ORDER BY bnum DESC';
+  } else if (bnum) {
+    const sql = `SELECT bnum, title, contents, regDate, uptDate, register FROM notice_board WHERE bnum = ${bnum}`;
     result = await selectSQL(sql);
+  } else {
+    result = {};
   }
 
   return NextResponse.json(result);
