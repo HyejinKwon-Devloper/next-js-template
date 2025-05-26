@@ -1,0 +1,4 @@
+.statistics-area {
+  @apply bg-white text-black shrink-0 w-[260px] max-h-[360px];
+  backface-visibility: hidden;
+}

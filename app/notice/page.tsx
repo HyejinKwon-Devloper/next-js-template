@@ -1,9 +1,27 @@
-import Button from '@/components/Button';
+'use client';
 import Table from '@/components/table/Table';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+interface INotice {
+  bnum: number;
+  title: string;
+  contents: string;
+  regDate: string;
+}
 
 export default function NoticeList() {
+  const [data, setData] = useState<INotice[]>([]);
+
+  async function getNoticeList() {
+    const response = await fetch('/api/notice?limit=5&offset=1');
+    const result = await response.json();
+    setData(result);
+  }
+  useEffect(() => {
+    getNoticeList();
+  }, []);
   return (
     <div className="main-container">
       <div className="content-title">
@@ -42,18 +60,15 @@ export default function NoticeList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>제목</td>
-              <td>2023-05-08</td>
-            </tr>
-            <tr>
-              <td>제목</td>
-              <td>2023-05-08</td>
-            </tr>
-            <tr>
-              <td>제목</td>
-              <td>2023-05-08</td>
-            </tr>
+            {data?.length > 0 &&
+              data.map((res) => {
+                return (
+                  <tr key={res.bnum}>
+                    <td>{res.title}</td>
+                    <td>{res.regDate}</td>
+                  </tr>
+                );
+              })}
           </tbody>
         </Table>
       </div>
